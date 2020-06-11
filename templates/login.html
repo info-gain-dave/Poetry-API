@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title%}Submit New Poem{% endblock %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{ msg }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+<p></p>
+<form action="#" method="post">
+    <p>Email:<input type="text" name="email"></p>
+    <p>Password:<input type="text" name="password"></p>
+    <p><input type="submit" value="submit"></p>
+</form> 
+{% endblock %}

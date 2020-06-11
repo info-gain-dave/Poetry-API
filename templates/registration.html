@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title%}Add New Poem{% endblock %}
+
+{% block content %}
+<h2>Sign Up</h2>
+<form action="" method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+        {{form.username.label}}<br>
+        {{form.username(size=20)}}
+        {% for error in form.username.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+
+    </p>
+    <p>
+        {{form.email.label}}<br>
+        {{form.email(size=20)}}
+        {% for error in form.email.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.password.label}}<br>
+        {{form.password()}}
+        {% for error in form.password.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.confirm_password.label}}<br>
+        {{form.confirm_password()}}
+        {% for error in form.confirm_password.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.submit()}}
+    </p>
+</form>
+{% endblock %}

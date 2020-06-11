@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title%}Add New Poem{% endblock %}
+{% block content %}
+<form action="" method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+        {{form.title.label}}<br>
+        {{form.title(size=20)}}
+        {% for error in form.title.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+
+    </p>
+    <p>
+        {{form.text.label}}<br>
+        {{form.text(size=1200, rows="25", cols="50")}}
+        {% for error in form.text.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.submit()}}
+    </p>
+</form>
+{% endblock %}
